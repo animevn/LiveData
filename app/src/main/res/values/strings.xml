@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ViewModelLiveData1</string>
+    <string name="viewModel">ViewModel</string>
+    <string name="teamA">TEAM A</string>
+    <string name="teamB">TEAM B</string>
+    <string name="bnTeamA">UPDATE</string>
+    <string name="increase">Increase</string>
+    <string name="decrease">Decrease</string>
 </resources>

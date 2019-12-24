@@ -1,7 +1,9 @@
-package com.haanhgs.app.viewmodellivedata1;
+package com.haanhgs.app.viewmodellivedata1.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.haanhgs.app.viewmodellivedata1.R;
 
 public class MainActivity extends AppCompatActivity {
 

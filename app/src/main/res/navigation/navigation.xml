@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentHome">
+
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.haanhgs.app.viewmodellivedata1.view.FragmentHome"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentTeamA"
+            app:destination="@id/fragmentTeamA" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentTeamB"
+            app:destination="@id/fragmentTeamB" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentTeamA"
+        android:name="com.haanhgs.app.viewmodellivedata1.view.FragmentTeamA"
+        android:label="fragment_team_a"
+        tools:layout="@layout/fragment_team_a" />
+    <fragment
+        android:id="@+id/fragmentTeamB"
+        android:name="com.haanhgs.app.viewmodellivedata1.view.FragmentTeamB"
+        android:label="fragment_team_b"
+        tools:layout="@layout/fragment_team_b" />
+</navigation>
