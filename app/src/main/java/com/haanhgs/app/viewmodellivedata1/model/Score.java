@@ -1,9 +1,12 @@
 package com.haanhgs.app.viewmodellivedata1.model;
 
-public class Score {
+import java.io.Serializable;
+
+public class Score implements Serializable {
 
     private int scoreA;
     private int scoreB;
+    private static final long serialUID = 220479;
 
     public Score(){
         scoreA = 0;

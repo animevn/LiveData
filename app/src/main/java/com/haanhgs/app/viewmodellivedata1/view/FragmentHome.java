@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import com.haanhgs.app.viewmodellivedata1.R;
+import com.haanhgs.app.viewmodellivedata1.Repo;
+import com.haanhgs.app.viewmodellivedata1.model.Score;
 import com.haanhgs.app.viewmodellivedata1.viewmodel.ScoreViewModel;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -31,11 +33,14 @@ public class FragmentHome extends Fragment {
     Button bnTeamB;
 
     private ScoreViewModel model;
+    private Score score;
     private FragmentActivity activity;
+    private Context context;
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
+        this.context = context;
         activity = getActivity();
     }
 
@@ -46,6 +51,13 @@ public class FragmentHome extends Fragment {
         });
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        model = ViewModelProviders.of(activity).get(ScoreViewModel.class);
+        model.setScore(Repo.load(context));
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -53,7 +65,7 @@ public class FragmentHome extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         ButterKnife.bind(this, view);
-        model = ViewModelProviders.of(activity).get(ScoreViewModel.class);
+
         handleTextViews();
         return view;
     }
@@ -71,4 +83,11 @@ public class FragmentHome extends Fragment {
                 break;
         }
     }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        Repo.save(context, model.getScore().getValue());
+    }
+
 }
