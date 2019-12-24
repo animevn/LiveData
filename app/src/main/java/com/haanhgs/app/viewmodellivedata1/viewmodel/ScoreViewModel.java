@@ -6,7 +6,11 @@ import androidx.lifecycle.ViewModel;
 
 public class ScoreViewModel extends ViewModel {
 
-    private MutableLiveData<Score> score = new MutableLiveData<>();
+    private final MutableLiveData<Score> score = new MutableLiveData<>();
+
+    public ScoreViewModel(){
+        score.setValue(new Score());
+    }
 
     public MutableLiveData<Score> getScore() {
         return score;
