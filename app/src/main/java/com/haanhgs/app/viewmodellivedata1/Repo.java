@@ -4,9 +4,7 @@ import android.content.Context;
 import com.haanhgs.app.viewmodellivedata1.model.Score;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
@@ -18,9 +16,7 @@ public class Repo {
             outputStream.writeObject(score);
             outputStream.flush();
             outputStream.close();
-        }catch (FileNotFoundException e){
-            e.printStackTrace();
-        }catch (IOException e){
+        }catch (Exception e){
             e.printStackTrace();
         }
     }
@@ -34,9 +30,7 @@ public class Repo {
                 ObjectInputStream inputStream = new ObjectInputStream(in);
                 Object object = inputStream.readObject();
                 score = (Score)object;
-            }catch (IOException e){
-                e.printStackTrace();
-            }catch (ClassNotFoundException e){
+            }catch (Exception e){
                 e.printStackTrace();
             }
         }
