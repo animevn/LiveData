@@ -38,7 +38,7 @@ public class Model extends ViewModel {
         }
     }
 
-    private void decreaseA(){
+    public void decreaseA(){
         if (score.getValue() == null){
             score.setValue(new Score());
         }else {
@@ -47,7 +47,7 @@ public class Model extends ViewModel {
         }
     }
 
-    private void decreaseB(){
+    public void decreaseB(){
         if (score.getValue() == null){
             score.setValue(new Score());
         }else {

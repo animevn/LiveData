@@ -8,25 +8,26 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import com.haanhgs.app.viewmodellivedata1.R;
+import com.haanhgs.app.viewmodellivedata1.model.Score;
 import com.haanhgs.app.viewmodellivedata1.viewmodel.Model;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class FragmentTeamA extends Fragment {
+public class FragmentTeamB extends Fragment {
 
-    @BindView(R.id.tvPointA)
-    TextView tvPointA;
-    @BindView(R.id.bnIncreaseA)
-    Button bnIncreaseA;
-    @BindView(R.id.bnDecreaseA)
-    Button bnDecreaseA;
-
+    @BindView(R.id.tvPointB)
+    TextView tvPointB;
+    @BindView(R.id.bnIncreaseB)
+    Button bnIncreaseB;
+    @BindView(R.id.bnDecreaseB)
+    Button bnDecreaseB;
     private Model viewModel;
     private FragmentActivity activity;
 
@@ -36,10 +37,10 @@ public class FragmentTeamA extends Fragment {
         activity = getActivity();
     }
 
-    private void handleData() {
+    private void handleData(){
         viewModel = new ViewModelProvider(activity).get(Model.class);
         viewModel.getScore().observe(this, score ->
-                tvPointA.setText(String.valueOf(score.getScoreA())));
+                tvPointB.setText(String.valueOf(score.getScoreB())));
     }
 
     @Nullable
@@ -47,20 +48,20 @@ public class FragmentTeamA extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_team_a, container, false);
+        View view = inflater.inflate(R.layout.fragment_team_b, container, false);
         ButterKnife.bind(this, view);
         handleData();
         return view;
     }
 
-    @OnClick({R.id.bnIncreaseA, R.id.bnDecreaseA})
+    @OnClick({R.id.bnIncreaseB, R.id.bnDecreaseB})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.bnIncreaseA:
-                viewModel.increaseA();
+            case R.id.bnIncreaseB:
+                viewModel.increaseB();
                 break;
-            case R.id.bnDecreaseA:
-                viewModel.decreaseA();
+            case R.id.bnDecreaseB:
+                viewModel.decreaseB();
                 break;
         }
     }

@@ -56,9 +56,9 @@ public class FragmentHome extends Fragment {
     }
 
     private void handleData(){
-        viewModel.getScore().observe(activity, score -> {
-            tvTeamA.setText(score.getScoreA());
-            tvTeamB.setText(score.getScoreB());
+        viewModel.getScore().observe(this, score -> {
+            tvTeamA.setText(String.valueOf(score.getScoreA()));
+            tvTeamB.setText(String.valueOf(score.getScoreB()));
             FragmentHome.this.score = score;
         });
     }
