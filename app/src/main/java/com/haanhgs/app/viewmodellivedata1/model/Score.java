@@ -8,9 +8,11 @@ public class Score implements Serializable {
     private int scoreB;
     private static final long serialUID = 220479;
 
-    public Score(){
-        scoreA = 0;
-        scoreB = 0;
+    public Score() { }
+
+    public Score(int scoreA, int scoreB) {
+        this.scoreA = scoreA;
+        this.scoreB = scoreB;
     }
 
     public int getScoreA() {
