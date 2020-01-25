@@ -16,8 +16,8 @@ public class Model extends ViewModel {
         return score;
     }
 
-    public void setScore(MutableLiveData<Score> score) {
-        this.score = score;
+    public void setScore(Score score) {
+        this.score.setValue(score);
     }
 
     public void increaseA(){
