@@ -1,58 +1,47 @@
 package com.haanhgs.app.livedata.viewmodel;
 
+import android.app.Application;
+import com.haanhgs.app.livedata.model.Repo;
 import com.haanhgs.app.livedata.model.Score;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 
-public class Model extends ViewModel {
+public class Model extends AndroidViewModel {
 
-    private MutableLiveData<Score> score = new MutableLiveData<>();
+    private Repo repo;
 
-    public Model() {
-        score.setValue(new Score());
+    public Model(@NonNull Application application) {
+        super(application);
+        repo = new Repo(application.getApplicationContext());
     }
 
-    public MutableLiveData<Score> getScore() {
-        return score;
-    }
 
-    public void setScore(Score score) {
-        this.score.setValue(score);
+    public LiveData<Score> getData(){
+        return repo.getLiveData();
     }
 
     public void increaseA(){
-        if (score.getValue() == null){
-            score.setValue(new Score());
-        }else {
-            score.getValue().increaseA();
-            score.setValue(score.getValue());
-        }
-    }
-
-    public void increaseB(){
-        if (score.getValue() == null){
-            score.setValue(new Score());
-        }else {
-            score.getValue().increaseB();
-            score.setValue(score.getValue());
-        }
+        repo.increaseA();
     }
 
     public void decreaseA(){
-        if (score.getValue() == null){
-            score.setValue(new Score());
-        }else {
-            score.getValue().decreaseA();
-            score.setValue(score.getValue());
-        }
+        repo.decreaseA();
+    }
+
+    public void increaseB(){
+        repo.increaseB();
     }
 
     public void decreaseB(){
-        if (score.getValue() == null){
-            score.setValue(new Score());
-        }else {
-            score.getValue().decreaseB();
-            score.setValue(score.getValue());
-        }
+        repo.decreaseB();
+    }
+
+    public void save(){
+        repo.save();
+    }
+
+    public void load(){
+        repo.load();
     }
 }
