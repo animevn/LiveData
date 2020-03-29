@@ -34,7 +34,6 @@ public class FragmentHome extends Fragment {
 
     private Model viewModel;
     private FragmentActivity activity;
-    private Score score;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -42,23 +41,16 @@ public class FragmentHome extends Fragment {
         activity = getActivity();
     }
 
-    private void loadSave() {
-        Score scoreLoad = Helper.loadSerializable(activity);
-        viewModel.setScore(scoreLoad);
-    }
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         viewModel = new ViewModelProvider(activity).get(Model.class);
-        loadSave();
     }
 
     private void handleData(){
-        viewModel.getScore().observe(this, score -> {
+        viewModel.getData().observe(this, score -> {
             tvTeamA.setText(String.valueOf(score.getScoreA()));
             tvTeamB.setText(String.valueOf(score.getScoreB()));
-            FragmentHome.this.score = score;
         });
     }
 
@@ -87,9 +79,4 @@ public class FragmentHome extends Fragment {
         }
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        Helper.saveSerializable(activity, score);
-    }
 }

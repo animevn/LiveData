@@ -37,7 +37,7 @@ public class FragmentTeamB extends Fragment {
 
     private void handleData(){
         viewModel = new ViewModelProvider(activity).get(Model.class);
-        viewModel.getScore().observe(this, score ->
+        viewModel.getData().observe(this, score ->
                 tvPointB.setText(String.valueOf(score.getScoreB())));
     }
 

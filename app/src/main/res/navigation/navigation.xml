@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_fragmentHome_to_fragmentTeamA"
-            app:destination="@id/fragmentTeamA" />
+            app:destination="@+id/fragmentTeamA" />
         <action
             android:id="@+id/action_fragmentHome_to_fragmentTeamB"
             app:destination="@id/fragmentTeamB" />
