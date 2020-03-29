@@ -1,4 +1,4 @@
-package com.haanhgs.app.viewmodellivedata1.view;
+package com.haanhgs.app.livedata.view;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -7,15 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import com.haanhgs.app.viewmodellivedata1.R;
-import com.haanhgs.app.viewmodellivedata1.model.Repo;
-import com.haanhgs.app.viewmodellivedata1.model.Score;
-import com.haanhgs.app.viewmodellivedata1.viewmodel.Model;
+import com.haanhgs.app.livedata.R;
+import com.haanhgs.app.livedata.model.Repo;
+import com.haanhgs.app.livedata.model.Score;
+import com.haanhgs.app.livedata.viewmodel.Model;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import butterknife.BindView;

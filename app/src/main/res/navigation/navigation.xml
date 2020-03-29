@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragmentHome"
-        android:name="com.haanhgs.app.viewmodellivedata1.view.FragmentHome"
+        android:name="com.haanhgs.app.livedata.view.FragmentHome"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentTeamA"
-        android:name="com.haanhgs.app.viewmodellivedata1.view.FragmentTeamA"
+        android:name="com.haanhgs.app.livedata.view.FragmentTeamA"
         android:label="fragment_team_a"
         tools:layout="@layout/fragment_team_a" />
     <fragment
         android:id="@+id/fragmentTeamB"
-        android:name="com.haanhgs.app.viewmodellivedata1.view.FragmentTeamB"
+        android:name="com.haanhgs.app.livedata.view.FragmentTeamB"
         android:label="fragment_team_b"
         tools:layout="@layout/fragment_team_b" />
 </navigation>

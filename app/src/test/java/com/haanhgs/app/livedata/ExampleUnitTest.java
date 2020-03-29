@@ -1,4 +1,4 @@
-package com.haanhgs.app.viewmodellivedata1;
+package com.haanhgs.app.livedata;
 
 import org.junit.Test;
 

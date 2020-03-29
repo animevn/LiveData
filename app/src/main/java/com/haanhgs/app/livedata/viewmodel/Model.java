@@ -1,6 +1,6 @@
-package com.haanhgs.app.viewmodellivedata1.viewmodel;
+package com.haanhgs.app.livedata.viewmodel;
 
-import com.haanhgs.app.viewmodellivedata1.model.Score;
+import com.haanhgs.app.livedata.model.Score;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 

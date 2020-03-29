@@ -1,4 +1,4 @@
-package com.haanhgs.app.viewmodellivedata1.model;
+package com.haanhgs.app.livedata.model;
 
 import android.content.Context;
 import android.util.Log;

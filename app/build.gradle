@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.0"
     defaultConfig {
-        applicationId "com.haanhgs.app.viewmodellivedata1"
+        applicationId "com.haanhgs.app.livedata"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
@@ -39,8 +39,8 @@ dependencies {
     annotationProcessor "androidx.lifecycle:lifecycle-extensions:2.2.0"
 
     //navigation
-    implementation 'androidx.navigation:navigation-fragment:2.2.0'
-    implementation 'androidx.navigation:navigation-ui:2.2.0'
+    implementation 'androidx.navigation:navigation-fragment:2.2.1'
+    implementation 'androidx.navigation:navigation-ui:2.2.1'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
