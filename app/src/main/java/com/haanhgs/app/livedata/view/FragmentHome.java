@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import com.haanhgs.app.livedata.R;
-import com.haanhgs.app.livedata.model.Repo;
+import com.haanhgs.app.livedata.model.Helper;
 import com.haanhgs.app.livedata.model.Score;
 import com.haanhgs.app.livedata.viewmodel.Model;
 import androidx.annotation.NonNull;
@@ -43,7 +43,7 @@ public class FragmentHome extends Fragment {
     }
 
     private void loadSave() {
-        Score scoreLoad = Repo.loadSerializable(activity);
+        Score scoreLoad = Helper.loadSerializable(activity);
         viewModel.setScore(scoreLoad);
     }
 
@@ -90,6 +90,6 @@ public class FragmentHome extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        Repo.saveSerializable(activity, score);
+        Helper.saveSerializable(activity, score);
     }
 }
