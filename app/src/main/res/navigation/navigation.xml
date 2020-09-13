@@ -15,7 +15,7 @@
             app:destination="@+id/fragmentTeamA" />
         <action
             android:id="@+id/action_fragmentHome_to_fragmentTeamB"
-            app:destination="@id/fragmentTeamB" />
+            app:destination="@+id/fragmentTeamB" />
     </fragment>
     <fragment
         android:id="@+id/fragmentTeamA"
