@@ -2,21 +2,8 @@ package com.haanhgs.app.livedata.model;
 
 import android.content.Context;
 import android.util.Log;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.JSONTokener;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
+import org.json.*;
+import java.io.*;
 
 public class Helper {
 

@@ -1,5 +1,6 @@
 package com.haanhgs.app.livedata.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+@SuppressLint("NonConstantResourceId")
 public class FragmentTeamB extends Fragment {
 
     @BindView(R.id.tvPointB)
@@ -37,7 +39,7 @@ public class FragmentTeamB extends Fragment {
 
     private void handleData(){
         viewModel = new ViewModelProvider(activity).get(Model.class);
-        viewModel.getData().observe(this, score ->
+        viewModel.getData().observe(getViewLifecycleOwner(), score ->
                 tvPointB.setText(String.valueOf(score.getScoreB())));
     }
 

@@ -11,8 +11,8 @@ public class Repo {
     private final ThreadPoolExecutor executor = new ThreadPoolExecutor(2, 8, 60, TimeUnit.SECONDS,
             new LinkedBlockingQueue<>());
     private Score score = new Score();
-    private MutableLiveData<Score> liveData = new MutableLiveData<>();
-    private Context context;
+    private final MutableLiveData<Score> liveData = new MutableLiveData<>();
+    private final Context context;
 
     public Repo(Context context) {
         this.context = context;
@@ -28,12 +28,16 @@ public class Repo {
             score.increaseA();
             liveData.postValue(score);
         });
+
     }
 
     public void decreaseA(){
-        executor.execute(() -> {
-            score.decreaseA();
-            liveData.postValue(score);
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                score.decreaseA();
+                liveData.postValue(score);
+            }
         });
     }
 

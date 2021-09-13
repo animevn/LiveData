@@ -1,15 +1,12 @@
 package com.haanhgs.app.livedata.viewmodel;
-
 import android.app.Application;
-import com.haanhgs.app.livedata.model.Repo;
-import com.haanhgs.app.livedata.model.Score;
+import com.haanhgs.app.livedata.model.*;
 import androidx.annotation.NonNull;
-import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.LiveData;
+import androidx.lifecycle.*;
 
 public class Model extends AndroidViewModel {
 
-    private Repo repo;
+    private final Repo repo;
 
     public Model(@NonNull Application application) {
         super(application);
